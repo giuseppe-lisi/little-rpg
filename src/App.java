@@ -54,8 +54,8 @@ public class App {
                     System.out.println("Attack (a) | Heal (h)");
                     String choice = input.nextLine();
 
-                    // if player doesnt correctly type y to attack he doesnt deal damage and gets
-                    // attacked
+                    // if player doesnt correctly type y to attack or h to heal 
+                    // he doesnt deal damage and gets attacked
                     switch (choice) {
                         case "a":
                             player.dealDamage(currentEnemy);
