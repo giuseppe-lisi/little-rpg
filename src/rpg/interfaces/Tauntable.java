@@ -1,7 +1,7 @@
 package rpg.interfaces;
 
 // for npcs that are able to talk and taunt the player
-public interface Talker {
+public interface Tauntable {
 
     public static final String[] taunts = {
         "I am your doom!",

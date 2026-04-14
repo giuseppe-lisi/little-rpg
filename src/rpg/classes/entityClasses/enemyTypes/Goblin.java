@@ -3,9 +3,9 @@ import java.util.Random;
 
 import rpg.classes.entityClasses.Enemy;
 import rpg.classes.entityClasses.Player;
-import rpg.interfaces.Talker;
+import rpg.interfaces.Tauntable;
 
-public class Goblin extends Enemy implements Talker {
+public class Goblin extends Enemy implements Tauntable {
     private int hp;
     private int attack;
     private float defense;
@@ -41,9 +41,9 @@ public class Goblin extends Enemy implements Talker {
     @Override
     public String taunt() {
         Random rand = new Random();
-        return Talker.taunts[rand.nextInt(0,Talker.taunts.length - 1)];
+        return Tauntable.taunts[rand.nextInt(0,Tauntable.taunts.length - 1)];
     }
-    
+
     // draws goblin sprite on screen
     @Override
     public void drawSprite() {
