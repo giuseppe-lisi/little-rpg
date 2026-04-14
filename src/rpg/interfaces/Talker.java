@@ -9,7 +9,14 @@ public interface Talker {
         "Wololo",
         "Are you really that stupid to fight me, or do you just look that way?",
         "I know there is something good left in you... but when i'm done with you, there will be nothing left of you!",
-        "You fight well, it's a shame you choose the wrong side."
+        "You fight well, it's a shame you choose the wrong side.",
+        "I'm gonna floss with your spine!",
+        "I'll crack your skull open with my thumbs!",
+        "You must enjoy losing.",
+        "Stay and be destroyed.",
+        "You are a waste of breath.",
+        "You really don't want me as your enemy.",
+        "Surrender or die!"
     };
 
     public String taunt();
