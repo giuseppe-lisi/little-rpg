@@ -1,11 +1,14 @@
 package rpg.classes.entityClasses.enemyTypes;
+import java.util.Random;
+
 import rpg.classes.entityClasses.Enemy;
 import rpg.classes.entityClasses.Player;
+import rpg.interfaces.Talker;
 
-public class Goblin extends Enemy {
-    protected int hp;
-    protected int attack;
-    protected float defense;
+public class Goblin extends Enemy implements Talker {
+    private int hp;
+    private int attack;
+    private float defense;
 
     public Goblin(int hp, int attack, float defense) {
         this.hp = hp;
@@ -32,6 +35,7 @@ public class Goblin extends Enemy {
     public void dealDamage(Player player) {
         player.takeDamage(attack);
     }
+
     // draws goblin sprite on screen
     @Override
     public void drawSprite() {
@@ -54,5 +58,11 @@ public class Goblin extends Enemy {
                         ". . .  . . .  .%%%**==+. .  . . ** . . .\n" +
                         " . . .. . . .. . .#*+***. .. . =*####+= \n" +
                         " . . .. . . .. . .%** * . .. . . .. . . \n");
+    }
+
+    @Override
+    public String taunt() {
+        Random rand = new Random();
+        return Talker.taunts[rand.nextInt(0,Talker.taunts.length - 1)];
     }
 }

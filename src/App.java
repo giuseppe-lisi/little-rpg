@@ -10,16 +10,18 @@ public class App {
         boolean playerTurn = true;
 
         Player player = new Player();
-        Goblin goblin = new Goblin(100, 5, 0.5f);
-        Slime slime = new Slime(30, 5, 0.5f);
+        Goblin goblin = new Goblin(100, 5, 0.9f);
+        Slime slime = new Slime(30, 5, 0.7f);
 
-        while (slime.getHp() > 0) {
+        while (goblin.getHp() > 0) {
 
             if (playerTurn) {
                 System.out.println("It's the enemy's turn!");
-                slime.drawSprite();
+                goblin.drawSprite();
                 System.out.println("*---------------------*");
-                slime.getHpString();
+                System.out.println("The enemy taunts you: " + goblin.taunt());
+                System.out.println("*---------------------*");
+                goblin.getHpString();
                 System.out.println("*---------------------*");
                 System.out.println("HP: " + player.getHp() + " | Attack: " + player.getAttack() + " | Defense: "
                         + player.getDefense());
@@ -29,12 +31,12 @@ public class App {
                 // if player doesnt correctly type y to attack he doesnt deal damage and gets
                 // attacked
                 if (choice.equals("y")) {
-                    player.dealDamage(slime);
+                    player.dealDamage(goblin);
                 }
                 playerTurn = !playerTurn;
 
             } else { // goblin deals damage and gives back turn to player
-                slime.dealDamage(player);
+                goblin.dealDamage(player);
                 playerTurn = !playerTurn;
             }
         }

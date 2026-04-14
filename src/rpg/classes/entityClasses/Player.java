@@ -2,8 +2,8 @@ package rpg.classes.entityClasses;
 
 public class Player {
     private int hp = 100;
-    private int attack = 10;
-    private float defense = 0.1f;
+    private int attack = 30;
+    private float defense = 0.9f;
 
     // setter getter
     public int getHp() {
