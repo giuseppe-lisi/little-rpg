@@ -37,7 +37,13 @@ public class Goblin extends Enemy implements Talker {
     public void dealDamage(Player player) {
         player.takeDamage(attack);
     }
-
+    
+    @Override
+    public String taunt() {
+        Random rand = new Random();
+        return Talker.taunts[rand.nextInt(0,Talker.taunts.length - 1)];
+    }
+    
     // draws goblin sprite on screen
     @Override
     public void drawSprite() {
@@ -62,9 +68,4 @@ public class Goblin extends Enemy implements Talker {
                         " . . .. . . .. . .%** * . .. . . .. . . \n");
     }
 
-    @Override
-    public String taunt() {
-        Random rand = new Random();
-        return Talker.taunts[rand.nextInt(0,Talker.taunts.length - 1)];
-    }
 }
