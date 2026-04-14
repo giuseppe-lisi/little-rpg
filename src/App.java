@@ -16,7 +16,6 @@ public class App {
         while (goblin.getHp() > 0) {
 
             if (playerTurn) {
-                System.out.println("It's the enemy's turn!");
                 goblin.drawSprite();
                 System.out.println("*---------------------*");
                 System.out.println("The enemy taunts you: " + goblin.taunt());
@@ -24,7 +23,7 @@ public class App {
                 goblin.getHpString();
                 System.out.println("*---------------------*");
                 System.out.println("HP: " + player.getHp() + " | Attack: " + player.getAttack() + " | Defense: "
-                        + player.getDefense());
+                + player.getDefense());
                 System.out.println("*---------------------*");
                 System.out.println("Attack? (y)");
                 String choice = input.nextLine();
@@ -33,9 +32,14 @@ public class App {
                 if (choice.equals("y")) {
                     player.dealDamage(goblin);
                 }
+                System.out.println("*---------------------*");
+                System.out.println("It's the enemy's turn!");
                 playerTurn = !playerTurn;
-
+                
             } else { // goblin deals damage and gives back turn to player
+                System.out.println("*---------------------*");
+                System.out.println("The enemy attacks aswell!");
+                System.out.println("*---------------------*");
                 goblin.dealDamage(player);
                 playerTurn = !playerTurn;
             }
