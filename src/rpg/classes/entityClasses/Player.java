@@ -1,5 +1,7 @@
 package rpg.classes.entityClasses;
 
+import java.math.BigDecimal;
+
 public class Player {
     private int hp = 100;
     private int attack = 30;
@@ -19,23 +21,24 @@ public class Player {
         return defense;
     }
 
-    public void getStats() {
-        System.out.println("*---------------------*");
-        System.out.println("HP: " + hp + " | Attack: " + attack + " | Defense: " + defense);
-        System.out.println("*---------------------*");
+    public void setKillCount() {
+        killCount += 1;
     }
-
+    
     // player util methods
     public void dealDamage(Enemy enemy) {
         enemy.takeDamage(attack);
     }
-
+    
     public void takeDamage(int damage) {
         this.hp -= damage * defense;
     }
-
-    public void updateKillCount() {
-        killCount += 1;
+    
+    // stats methods
+    public void getStats() {
+        System.out.println("*---------------------*");
+        System.out.println("HP: " + hp + " | Attack: " + attack + String.format(" | Defense: %.2f", defense));
+        System.out.println("*---------------------*");
     }
 
     public void lvlUpStats() {
@@ -43,7 +46,7 @@ public class Player {
             System.out.println("You leveled up!");
             hp += 20;
             attack += 10;
-            defense -= 0.1; 
+            defense -= 0.1;
         }
     }
 
