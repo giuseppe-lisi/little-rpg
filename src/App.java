@@ -31,24 +31,23 @@ public class App {
                 }
 
                 currentEnemy.getHpString();
-                System.out.println("*---------------------*");
-                System.out.println("HP: " + player.getHp() + " | Attack: " + player.getAttack() + " | Defense: "
-                        + player.getDefense());
-                System.out.println("*---------------------*");
+
+                player.getStats();
+
                 System.out.println("Attack? (y)");
                 String choice = input.nextLine();
-                // if player doesnt correctly type y to attack he doesnt deal damage and gets
-                // attacked
+
+                // if player doesnt correctly type y to attack he doesnt deal damage and gets attacked
                 if (choice.equals("y")) {
                     player.dealDamage(currentEnemy);
                 }
-                System.out.println("*---------------------*");
-                System.out.println("It's the enemy's turn!");
                 playerTurn = !playerTurn;
-
+                
             } else {
                 // currentEnemy deals damage and gives back turn to player
                 if (currentEnemy.getHp() > 0 && player.getHp() > 0) {
+                    System.out.println("*---------------------*");
+                    System.out.println("It's the enemy's turn!");
                     System.out.println("*---------------------*");
                     System.out.println("The enemy attacks aswell!");
                     System.out.println("*---------------------*");
@@ -56,10 +55,10 @@ public class App {
                     playerTurn = !playerTurn;
                 }
             }
-
-            // print game over message if player died otherwise go back and get new enemy
+            
         }
-
+        
+        // print game over message if player
         System.out.println("▗▄▄▄▖▐▌   ▗▞▀▚▖    ▄▄▄▄   ▄▄▄  ▄▄▄▄   ▄▄▄  ■  ▗▞▀▚▖ ▄▄▄ ▄▄▄     ▄   ▄  ▄▄▄  ▄▄▄▄  \n" + //
                 "  █  ▐▌   ▐▛▀▀▘    █ █ █ █   █ █   █ ▀▄▄▗▄▟▙▄▖▐▛▀▀▘█   ▀▄▄      █ ▄ █ █   █ █   █ \n" + //
                 "  █  ▐▛▀▚▖▝▚▄▄▖    █   █ ▀▄▄▄▀ █   █ ▄▄▄▀ ▐▌  ▝▚▄▄▖█   ▄▄▄▀     █▄█▄█ ▀▄▄▄▀ █   █ \n" + //

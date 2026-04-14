@@ -19,6 +19,12 @@ public class Player {
         return defense;
     }
 
+    public void getStats() {
+        System.out.println("*---------------------*");
+        System.out.println("HP: " + hp + " | Attack: " + attack + " | Defense: " + defense);
+        System.out.println("*---------------------*");
+    }
+
     // player util methods
     public void dealDamage(Enemy enemy) {
         enemy.takeDamage(attack);
