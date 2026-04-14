@@ -37,6 +37,7 @@ public class App {
             // main game loop
             while (player.getHp() > 0) {
 
+                // player turn
                 if (playerTurn) {
                     currentEnemy.drawSprite();
 
@@ -53,7 +54,8 @@ public class App {
                     System.out.println("Attack (a) | Heal (h)");
                     String choice = input.nextLine();
 
-                    // if player doesnt correctly type y to attack he doesnt deal damage and gets attacked
+                    // if player doesnt correctly type y to attack he doesnt deal damage and gets
+                    // attacked
                     switch (choice) {
                         case "a":
                             player.dealDamage(currentEnemy);
@@ -67,9 +69,10 @@ public class App {
                         default:
                             playerTurn = !playerTurn;
                             break;
-                        }
-
-                } else {
+                    }
+                } 
+                // enemy turn
+                else {
                     // currentEnemy deals damage and gives back turn to player
                     if (currentEnemy.getHp() > 0) {
                         System.out.println("*---------------------*");
@@ -80,8 +83,8 @@ public class App {
                         currentEnemy.dealDamage(player);
                         playerTurn = !playerTurn;
                     } else {
-                        currentFloor++;
-                        if (currentFloor == 10) {
+                        currentFloor += 1;
+                        if (currentFloor >= levels.length - 1) {
                             running = false;
                             System.out.println("▗▖  ▗▖▄▄▄  █  ▐▌    ▄   ▄ ▄ ▄▄▄▄                                   \n" + //
                                     " ▝▚▞▘█   █ ▀▄▄▞▘    █ ▄ █ ▄ █   █                                  \n" + //
@@ -101,12 +104,13 @@ public class App {
                                     "▐▌▝▚▄▟▌█   █ ▐▛▀▀▘    ▐▌   ▐▛▀▀▘▐▛▀▀▘█   █     ▀▄▄  █ ▝▚▄▟▌▄ █   █ \n" + //
                                     "▐▛▀▚▖   ▀▄▀  ▝▚▄▄▖    ▐▛▀▚▖▝▚▄▄▖▝▚▄▄▖█   █     ▄▄▄▀ █      █ █   █ \n" + //
                                     "▐▌ ▐▌                 ▐▙▄▞▘                         █      █       \n");
+                                    break;
                         } else {
                             // spawns a new enemy, player starts again
                             player.setKillCount();
                             player.lvlUpStats();
                             System.out.println("*---------------------*");
-                            System.out.println("A new foe appears! You are on floor: " + currentFloor);
+                            System.out.println("A new foe appears! You are on floor: " + (currentFloor + 1));
                             System.out.println("*---------------------*");
                             playerTurn = !playerTurn;
                             currentEnemy = levels[currentFloor];
