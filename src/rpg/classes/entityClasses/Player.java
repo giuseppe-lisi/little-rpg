@@ -4,6 +4,7 @@ public class Player {
     private int hp = 100;
     private int attack = 30;
     private float defense = 0.9f;
+    private int killCount = 0;
 
     // setter getter
     public int getHp() {
@@ -25,6 +26,18 @@ public class Player {
 
     public void takeDamage(int damage) {
         this.hp -= damage;
+    }
+
+    public void updateKillCount() {
+        killCount += 1;
+    }
+
+    public void lvlUpStats() {
+        if (killCount % 3 == 0) {
+            hp += 10;
+            attack += 20;
+            defense -= 0.1; 
+        }
     }
 
 }
