@@ -1,12 +1,11 @@
 package rpg.classes.entityClasses;
 
-import java.math.BigDecimal;
-
 public class Player {
     private int hp = 100;
     private int attack = 30;
     private float defense = 0.9f;
     private int killCount = 0;
+
 
     // setter getter
     public int getHp() {
@@ -32,6 +31,10 @@ public class Player {
     
     public void takeDamage(int damage) {
         this.hp -= damage * defense;
+    }
+
+    public void heal() {
+        hp += 50;
     }
     
     // stats methods
