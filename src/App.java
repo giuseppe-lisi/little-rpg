@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-import javax.net.ssl.SNIHostName;
-
 import rpg.classes.entityClasses.Player;
 import rpg.classes.entityClasses.enemyTypes.Goblin;
 
