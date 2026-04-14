@@ -19,7 +19,7 @@ public class Slime extends Enemy {
     }
 
     public void getHpString() {
-        System.out.println("Current goblin hp: " + hp);
+        System.out.println("Current slime hp: " + hp);
     }
 
     // class utils
