@@ -40,8 +40,9 @@ public class Player {
 
     public void lvlUpStats() {
         if (killCount % 3 == 0) {
-            hp += 10;
-            attack += 20;
+            System.out.println("You leveled up!");
+            hp += 20;
+            attack += 10;
             defense -= 0.1; 
         }
     }
