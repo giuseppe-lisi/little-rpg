@@ -1,5 +1,10 @@
+import rpg.classes.playerClasses.Player;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Player player = new Player();
+
+        player.attack();
+        player.defend();
     }
 }
