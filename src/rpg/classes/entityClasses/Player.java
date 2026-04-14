@@ -31,7 +31,7 @@ public class Player {
     }
 
     public void takeDamage(int damage) {
-        this.hp -= damage;
+        this.hp -= damage * defense;
     }
 
     public void updateKillCount() {

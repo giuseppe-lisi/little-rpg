@@ -27,7 +27,7 @@ public class Slime extends Enemy {
     // class utils
     @Override
     public void takeDamage(int damage) {
-        this.hp -= damage;
+        this.hp -= damage * defense;
     }
 
     @Override
