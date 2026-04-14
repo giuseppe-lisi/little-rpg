@@ -1,5 +1,6 @@
 package rpg.classes.entityClasses.enemyTypes;
 import rpg.classes.entityClasses.Enemy;
+import rpg.classes.entityClasses.Player;
 
 public class Goblin extends Enemy {
     protected int hp;
@@ -17,10 +18,41 @@ public class Goblin extends Enemy {
         return hp;
     }
 
+    public void getHpString() {
+        System.out.println("Current goblin hp: " + hp);
+    }
+
+    // class utils
     @Override
     public void takeDamage(int damage) {
         this.hp -= damage;
-        System.err.println("Current goblin hp: " + this.hp);
     }
-    
+
+    @Override
+    public void dealDamage(Player player) {
+        player.takeDamage(attack);
+    }
+    // draws goblin sprite on screen
+    @Override
+    public void drawSprite() {
+        System.err.print(". . .  . . .  . . .  #.. .  . . .  . . .\n" +
+                        " . . .. . . .. . . .. *#= ..==---.. . . \n" +
+                        " . . .. . . .. . . .. *#%#=**+::--= . . \n" +
+                        ". . .  . . .  . .*******%%**=---*+== . .\n" +
+                        ". . .  . . .  ***===##%%@*#-##@*=:===#*.\n" +
+                        ". . .  . . .#%#*+===*%%@@%##+==+==@@ . .\n" +
+                        " . . .. . . *%*++*+*#@%%%%*#%==%=:+=. . \n" +
+                        " . . .. .#**#*****##%%%%%%###+=*==. . . \n" +
+                        " . . ..*#%##**+**%%###%%#%#%*==* .. . . \n" +
+                        ". . . =%%%%*+***%@@  . . .=%#*. .  . . .\n" +
+                        ". . . **#+*+*#@@@@@@%% . .*##=. .  . . .\n" +
+                        " . . .**#**+-*%@%%%%%##.. %%#. . .. . . \n" +
+                        " *+= :**##%##*=*-%%%%%# . =#%* . .. . . \n" +
+                        " #%**%**##. .**=+*%%* . . .=#*+. .. . . \n" +
+                        "*%%+****## . #%%#**  . . .  .#*=.  . . .\n" +
+                        "%%#*.###%. .+%##* #==. . .  . :*=  . . .\n" +
+                        ". . .  . . .  .%%%**==+. .  . . ** . . .\n" +
+                        " . . .. . . .. . .#*+***. .. . =*####+= \n" +
+                        " . . .. . . .. . .%** * . .. . . .. . . \n");
+    }
 }
