@@ -47,11 +47,11 @@ public class App {
     
                     player.getStats();
     
-                    System.out.println("Attack? (y)");
+                    System.out.println("Attack? (a)");
                     String choice = input.nextLine();
     
                     // if player doesnt correctly type y to attack he doesnt deal damage and gets attacked
-                    if (choice.equals("y")) {
+                    if (choice.equals("a")) {
                         player.dealDamage(currentEnemy);
                     }
                     playerTurn = !playerTurn;
@@ -89,6 +89,11 @@ public class App {
                                                 "▐▛▀▚▖   ▀▄▀  ▝▚▄▄▖    ▐▛▀▚▖▝▚▄▄▖▝▚▄▄▖█   █     ▄▄▄▀ █      █ █   █ \n" + //
                                                 "▐▌ ▐▌                 ▐▙▄▞▘                         █      █       \n");
                         } 
+                        // spawns a new enemy, player starts again
+                        System.out.println("*---------------------*");
+                        System.out.println("A new foe appears! You are on floor: " + currentFloor);
+                        System.out.println("*---------------------*");
+                        playerTurn = !playerTurn;
                         currentEnemy = levels[currentFloor];
                     }
                 }
