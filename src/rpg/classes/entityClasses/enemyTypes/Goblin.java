@@ -17,10 +17,12 @@ public class Goblin extends Enemy implements Talker {
     }
 
     // getter setter
+    @Override
     public int getHp() {
         return hp;
     }
 
+    @Override
     public void getHpString() {
         System.out.println("Current goblin hp: " + hp);
     }

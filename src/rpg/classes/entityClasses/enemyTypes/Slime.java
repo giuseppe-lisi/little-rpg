@@ -14,10 +14,12 @@ public class Slime extends Enemy {
     }
 
     // getter setter
+    @Override
     public int getHp() {
         return hp;
     }
 
+    @Override
     public void getHpString() {
         System.out.println("Current slime hp: " + hp);
     }
