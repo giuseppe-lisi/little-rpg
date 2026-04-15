@@ -1,47 +1,25 @@
 package rpg.classes.entityClasses.enemyTypes;
 import java.util.Random;
-
 import rpg.classes.entityClasses.Enemy;
-import rpg.classes.entityClasses.Player;
 import rpg.interfaces.Tauntable;
 
+
 public class Knight extends Enemy implements Tauntable{
-    protected int hp;
-    protected int attack;
-    protected float defense;
 
     public Knight(int hp, int attack, float defense) {
-        this.hp = hp;
-        this.attack = attack;
-        this.defense = defense;
+        super(hp, attack, defense);
     }
 
-    // getter setter
+    // utils
     @Override
-    public int getHp() {
-        return hp;
+    public String taunt() {
+        Random rand = new Random();
+        return Tauntable.taunts[rand.nextInt(0,Tauntable.taunts.length - 1)];
     }
 
     @Override
     public void getHpString() {
         System.out.println("Current knight hp: " + hp);
-    }
-
-    // class utils
-    @Override
-    public void takeDamage(int damage) {
-        this.hp -= damage * defense;
-    }
-
-    @Override
-    public void dealDamage(Player player) {
-        player.takeDamage(attack);
-    }
-
-    @Override
-    public String taunt() {
-        Random rand = new Random();
-        return Tauntable.taunts[rand.nextInt(0,Tauntable.taunts.length - 1)];
     }
 
     // draws goblin sprite on screen
