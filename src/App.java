@@ -12,16 +12,16 @@ public class App {
 
         // game is made of 10 levels, each level is an enemy with different stats
         Enemy[] levels = {
-                new Slime(40, 5, 0.7f),
+                new Slime(40, 5, 0.9f),
                 new Slime(50, 5, 0.7f),
                 new Goblin(60, 10, 0.9f),
                 new Slime(80, 10, 0.7f),
                 new Goblin(60, 15, 0.8f),
                 new Knight(80, 20, 0.9f),
-                new Goblin(60, 25, 0.6f),
-                new Goblin(90, 30, 0.8f),
-                new Knight(95, 20, 0.8f),
-                new Knight(100, 25, 0.8f),
+                new Goblin(60, 25, 0.7f),
+                new Goblin(90, 30, 0.9f),
+                new Knight(95, 20, 0.9f),
+                new Knight(150, 25, 0.8f),
         };
 
         // player vars
@@ -121,13 +121,14 @@ public class App {
             }
             running = false;
         }
+        
+        input.close();
 
-        // print game over message if player
+        // print game over message if player dies
         System.out.println("▗▄▄▄▖▐▌   ▗▞▀▚▖    ▄▄▄▄   ▄▄▄  ▄▄▄▄   ▄▄▄  ■  ▗▞▀▚▖ ▄▄▄ ▄▄▄     ▄   ▄  ▄▄▄  ▄▄▄▄  \n" + //
                 "  █  ▐▌   ▐▛▀▀▘    █ █ █ █   █ █   █ ▀▄▄▗▄▟▙▄▖▐▛▀▀▘█   ▀▄▄      █ ▄ █ █   █ █   █ \n" + //
                 "  █  ▐▛▀▚▖▝▚▄▄▖    █   █ ▀▄▄▄▀ █   █ ▄▄▄▀ ▐▌  ▝▚▄▄▖█   ▄▄▄▀     █▄█▄█ ▀▄▄▄▀ █   █ \n" + //
                 "  █  ▐▌ ▐▌                                ▐▌                                      \n" + //
                 "                                          ▐▌                                      \n");
-        input.close();
     }
 }
