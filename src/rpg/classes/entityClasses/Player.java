@@ -58,7 +58,7 @@ public class Player {
             System.out.println("You leveled up!");
             maxHp += 20;
             attack += 10;
-            defense -= 0.1;
+            defense -= 0.2;
         }
     }
 
